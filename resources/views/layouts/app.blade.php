@@ -5,6 +5,9 @@
     <title>{{config('app.name')}}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.2.1/css/searchPanes.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
     <!-- Theme style -->
@@ -27,9 +30,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30" height="30"
+        <img class="navbar-brand-full" src="https://thumbs.dreamstime.com/b/icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-s%C3%ADmbolo-123663211.jpg" width="30" height="30"
              alt="InfyOm Logo">
-        <img class="navbar-brand-minimized" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30"
+        <img class="navbar-brand-minimized" src="https://thumbs.dreamstime.com/b/icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-s%C3%ADmbolo-123663211.jpg" width="30"
              height="30" alt="InfyOm Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -97,11 +100,85 @@
 </body>
 <!-- jQuery 3.1.1 -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/searchpanes/1.2.1/js/dataTables.searchPanes.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>  
+<!-- optional -->  
+<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>  
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
-@stack('scripts')
-
+<script type="text/javascript">
+  $(document).ready(function () {
+    // Create DataTable
+    var table = $('#example').DataTable({
+        dom: 'Pfrtip',
+    });
+ 
+    // Create the chart with initial data
+    var container = $('<div/>').insertBefore(table.table().container());
+ 
+    var chart = Highcharts.chart(container[0], {
+        chart: {
+            type: 'pie',
+        },
+        title: {
+            text: 'Custom graphics',
+        },
+         tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+     plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+        series: [
+            {
+                name: 'Detalles',
+                data: chartData(table),
+            },
+        ],
+    });
+ 
+    // On each draw, update the data in the chart
+    table.on('draw', function () {
+        chart.series[0].setData(chartData(table));
+    });
+});
+ 
+function chartData(table) {
+    var counts = {};
+ 
+    // Count the number of entries for each position
+    table
+        .column(0, { search: 'applied' })
+        .data()
+        .each(function (val) {
+            if (counts[val]) {
+                counts[val] += 1;
+            } else {
+                counts[val] = 1;
+            }
+        });
+ 
+    // And map it to the format highcharts uses
+    return $.map(counts, function (val, key) {
+        return {
+            name: key,
+            y: val,
+        };
+    });
+}
+</script>
 </html>
