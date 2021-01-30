@@ -21,3 +21,5 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('pacientes', 'PacienteController');
+
+Route::resource('sugerencias', 'SugerenciaController');

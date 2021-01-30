@@ -11,7 +11,7 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
-                             Generar reportes graficos customs
+                             Generar reportes graficos de Pacientes
         
                          </div>
                          <div class="card-body">
