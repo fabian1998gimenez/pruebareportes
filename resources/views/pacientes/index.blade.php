@@ -32,8 +32,7 @@
         
         <th>Resutado</th>
         <th>Email</th>
-        <th>Latitud</th>
-        <th>Longitud</th>
+        
         <th>Usuario</th>
 
             </tr>
@@ -66,8 +65,7 @@
             @break
             @endswitch</td>
             <td>{{ $paciente->email }}</td>
-            <td>{{ $paciente->latitud }}</td>
-            <td>{{ $paciente->longitud }}</td>
+         
             <td>{{ $paciente->usuario }}</td>
             </tr>
         @endforeach

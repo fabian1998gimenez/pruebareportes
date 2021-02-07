@@ -12,13 +12,13 @@ class CasoPositivoController extends Controller
 
     public function __construct(){
     //Ruta de api para consumir casos positivos.
-    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/api/CasoPositivo']);
+    $this->client = new Client (['base_uri'=>'http://127.0.0.1:6060/reporte_positivos']);
     
     }
 
     public function index ()
     {
-        $repuesta=$this->client->get('casos_positivos');
+        $repuesta=$this->client->get('reporte_positivos');
 
         $casos_positivos = json_decode($repuesta->getBody()->getContents());
        

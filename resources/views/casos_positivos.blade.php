@@ -58,12 +58,14 @@
         <th>N° de Planilla</th>
         <th>Año</th>
         <th>Lugar de Usuario</th>
+          <th>Usuario</th>
+
             </tr>
         </thead>
         <tbody>
         @foreach($casos_positivos as $cp)
             <tr>
-                <td>{{ $cp->paciente_id  }}</td>
+                <td>{{ $cp->nombre_apellido  }}</td>
             <td>{{ $cp->codigo}}</td>
             <td>{{ $cp->region}}</td>
             <td>{{ $cp->codigo_distrito}}</td>

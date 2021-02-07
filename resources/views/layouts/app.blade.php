@@ -29,7 +29,7 @@
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ url('/home') }}">
         <img class="navbar-brand-full" src="https://thumbs.dreamstime.com/b/icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-s%C3%ADmbolo-123663211.jpg" width="30" height="30"
              alt="InfyOm Logo">
         <img class="navbar-brand-minimized" src="https://thumbs.dreamstime.com/b/icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-s%C3%ADmbolo-123663211.jpg" width="30"
