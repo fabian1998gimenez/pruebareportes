@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{config('app.name')}}</title>
+    <title>Reportes</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.2.1/css/searchPanes.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -42,8 +43,7 @@
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
-                <i class="icon-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+                <i class="far fa-user fa-2x"></i>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -53,25 +53,12 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
-                    <strong>Account</strong>
+                    <strong>Cuenta</strong>
                 </div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-envelope-o"></i> Messages
-                    <span class="badge badge-success">42</span>
-                </a>
-                <div class="dropdown-header text-center">
-                    <strong>Settings</strong>
-                </div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-user"></i> Profile</a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-wrench"></i> Settings</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-shield"></i> Lock Account</a>
                 <a href="{{ url('/logout') }}" class="dropdown-item btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa fa-lock"></i>Logout
+                    <i class="fa fa-lock"></i>Salir
                 </a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf

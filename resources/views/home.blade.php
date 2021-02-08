@@ -58,7 +58,7 @@
                       </div>
                       <div class="text-value-lg"><i class="far fa-chart-bar fa-2x"></i> <span class="badge badge-success"></span></div><small class="text-muted text-uppercase font-weight-bold"> Casos Positivos <br><a href="{{ action('CasoPositivoController@index') }}" class="small-box-footer">Mas informacion <i class="fa fa-arrow-circle-right"></i></a></small>
                       <div class="progress progress-xs mt-3 mb-0">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>
@@ -95,13 +95,30 @@
                       </small>
                       <div class="progress progress-xs mt-3 mb-0">
 
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
                       </div>
                     </div>
                   </div>
                 </div>
-
+<!-- /.col-->
+                <div class="col-sm-6 col-md-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="text-muted text-right mb-4">
+                        <svg class="c-icon c-icon-2xl">
+                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
+                        </svg>
+                      </div>
+                     <div class="text-value-lg"><i class="fas fa-chart-pie fa-2x"></i> <span class="badge badge-info">
+                    </span></div><small class="text-muted text-uppercase font-weight-bold"> Graficos <br><a href="{{ action('GraficoController@index') }}" class="small-box-footer">Mas informacion <i class="fa fa-arrow-circle-right"></i></a></small>
+                      <div class="progress progress-xs mt-3 mb-0">
+                         <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             </div>
