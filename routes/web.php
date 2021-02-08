@@ -26,3 +26,4 @@ Route::resource('controles', 'ControlController');
 Route::resource('denuncias', 'DenunciaController');
 Route::resource('casos_positivos', 'CasoPositivoController');
 Route::resource('usuarios', 'UsuarioController');
+Route::get('generos', 'GraficoController@index');

@@ -1,0 +1,3 @@
+{{$femenino}}
+{{$masculino}}
+{{$otro}}
