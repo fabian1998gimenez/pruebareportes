@@ -76,12 +76,8 @@
 </div>
 <footer class="app-footer">
     <div>
-        <a href="https://infyom.com">InfyOm </a>
-        <span>&copy; 2019 InfyOmLabs.</span>
-    </div>
-    <div class="ml-auto">
-        <span>Powered by</span>
-        <a href="https://coreui.io">CoreUI</a>
+        <a href="https://infyom.com">Séptima Región Sanitaria</a>
+        <span>&copy; 2021</span>
     </div>
 </footer>
 </body>
@@ -115,7 +111,7 @@
             type: 'pie',
         },
         title: {
-            text: 'Custom graphics',
+            text: 'Gráfico Personalizado',
         },
          tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
